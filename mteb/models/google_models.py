@@ -63,7 +63,7 @@ class GoogleWrapper:
             embeddings_batch = self._client.get_embeddings(inputs, **kwargs)
             embeddings.extend([el.values for el in embeddings_batch])
 
-        return self._to_numpy(embeddings)
+        return np.array(embeddings)
 
     def encode_queries(
         self,
