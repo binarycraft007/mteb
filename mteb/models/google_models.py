@@ -26,7 +26,7 @@ TASK_TYPES = {
 
 class GoogleWrapper:
     def __init__(self, model_name: str, embed_dim: int | None = None, **kwargs) -> None:
-        requires_package(self, "google-cloud-aiplatform", "Google text embedding")
+        # requires_package(self, "google-cloud-aiplatform", "Google text embedding")
         from vertexai.preview.language_models import TextEmbeddingModel
 
         self._client = TextEmbeddingModel.from_pretrained(model_name)
@@ -34,7 +34,7 @@ class GoogleWrapper:
         self._embed_dim = embed_dim
 
     def encode(self, sentences: list[str], prompt_name: str | None = None, **kwargs: Any) -> np.ndarray:
-        requires_package(self, "google-cloud-aiplatform", "Google text embedding")
+        # requires_package(self, "google-cloud-aiplatform", "Google text embedding")
         from vertexai.preview.language_models import TextEmbeddingInput
 
         kwargs = (
