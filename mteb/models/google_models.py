@@ -94,7 +94,7 @@ text_embedding_004= ModelMeta(
     release_date="2024-05-14",
     languages=["eng_Latn"],  # supported languages not specified
     loader=partial(GoogleWrapper, model_name="text-embedding-004"),
-    max_tokens=None,
+    max_tokens=20000,
     embed_dim=256,
     open_source=False,
 )
@@ -104,7 +104,7 @@ text_multilingual_embedding_002= ModelMeta(
     release_date="2024-05-14",
     languages=["eng_Latn"],  # supported languages not specified
     loader=partial(GoogleWrapper, model_name="text-multilingual-embedding-002"),
-    max_tokens=None,
+    max_tokens=20000,
     embed_dim=256,
     open_source=False,
 )
