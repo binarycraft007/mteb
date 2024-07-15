@@ -9,6 +9,7 @@ import numpy as np
 from mteb.model_meta import ModelMeta
 from mteb.models.text_formatting_utils import corpus_to_texts
 from mteb.requires_package import requires_package
+from mteb.overview import get_task
 
 logger = logging.getLogger(__name__)
 
@@ -45,7 +46,7 @@ class GoogleWrapper:
 
         task_type = None
         if prompt_name is not None:
-            meta = mteb.get_task(task_name).metadata
+            meta = get_task(prompt_name).metadata
             task_type = TASK_TYPES.get(meta.type, "")
 
         inputs = [TextEmbeddingInput(text, task_type) for text in sentences]
